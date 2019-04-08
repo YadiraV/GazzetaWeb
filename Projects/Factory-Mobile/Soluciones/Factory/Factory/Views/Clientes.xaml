@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Factory.Views.Clientes">
+    <ContentPage.Content>
+        <StackLayout>
+             <!--<StackLayout x:Name="SinConexion" IsVisible="false">
+                <Label Text="Sin conexion a internet"
+                       TextColor = "#04468d"
+                       HorizontalOptions = "CenterAndExpand"
+                       VerticalOptions = "CenterAndExpand"
+                       FontAttributes = "Bold">
+                </Label>
+            </StackLayout>-->
+            <ListView x:Name="ListaClientes" HasUnevenRows="true"
+                      ItemSelected="Handle_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Vertical" Padding="4">
+                                <Image Source="http://lorempixel.com/100/100/people/1"/> 
+<!--                                http://lorenpixel.com/100/100/people/1 -->
+                                <StackLayout HorizontalOptions="StartAndExpand">
+                                    <Label  Text="{Binding nombre}"
+                                        FontSize="9"
+                                        FontAttributes="Bold"
+                                        VerticalOptions="Center"
+                                        HorizontalOptions="Center"
+                                        TextColor="Black"/>
+                                    <Label  Text="{Binding Path=numero,
+                                        StringFormat='Codigo: {0}' }"
+                                        FontSize="9"
+                                        TextColor="Black"/>
+                                    <Label  Text="{Binding Path=numero,
+                                        StringFormat='NIT: {0}' }"
+                                        FontSize="9"
+                                        TextColor="Black"/>
+                                </StackLayout>
+                                    <Label  Text="{Binding Path=cupo,
+                                        StringFormat='Cupo: {0}' }"
+                                        FontSize="9"
+                                        FontAttributes="Bold"
+                                        TextColor="Gray"/>
+                                    <Label  Text="{Binding Path=saldo,
+                                        StringFormat='Saldo: {0}' }"
+                                        FontSize="9"
+                                        TextColor="Gray"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
